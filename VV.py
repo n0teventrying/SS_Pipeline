@@ -162,15 +162,11 @@ def process_files(data_folder, output_folder, csv_filename):
     with open(csv_filename, mode='w', newline='') as csv_file:
         writer = csv.writer(csv_file)
         # Write a single header row
-        writer.writerow([
-            "File", 
-            "Mean_RR_Rest", "STD_RR_Rest",
-            "Mean_RR_Exercise","STD_RR_Exercise",
-            "Mean_RR_Recovery", "STD_RR_Recovery",
-            "SD1_Rest", "SD2_Rest",
-            "SD1_Exercise", "SD2_Exercise",
-            "SD1_Recovery", "SD2_Recovery"
-        ])
+        header = ['Filename', 
+              'Rest Mean', 'Rest Std', 'Rest SD1', 'Rest SD2', 
+              'Exercise Mean', 'Exercise Std', 'Exercise SD1', 'Exercise SD2', 
+              'Recovery Mean', 'Recovery Std', 'Recovery SD1', 'Recovery SD2']
+        writer.writerow(header)
         
         # List to track problematic files
         failed_files = []
@@ -239,9 +235,9 @@ def process_files(data_folder, output_folder, csv_filename):
 
 if __name__ == "__main__":
     # Define folder paths
-    data_folder = "Active"  # Folder with .txt files
-    output_folder = "Plots_Active"       # Folder to save plots
-    csv_filename = "Active.csv"   # Output CSV file
+    data_folder = "Lazy"  # Folder with .txt files
+    output_folder = "Plots_Lazy"       # Folder to save plots
+    csv_filename = "Lazy.csv"   # Output CSV file
     
     # Create output folder if it doesn't exist
     if not os.path.exists(output_folder):

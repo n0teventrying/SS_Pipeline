@@ -48,8 +48,8 @@ def convert_images_to_pdf(image_folder, output_pdf_filename):
 
 if __name__ == "__main__":
     # Specify the folder containing images and the output PDF filename
-    image_folder = "Plots_Lazy"  # Assuming 'plots' is the folder name in the same directory
-    output_pdf_filename = "Lazy.pdf"  # Desired output PDF file name
+    image_folder = "Plots_All"  # Assuming 'plots' is the folder name in the same directory
+    output_pdf_filename = "All.pdf"  # Desired output PDF file name
 
     convert_images_to_pdf(image_folder, output_pdf_filename)
 
